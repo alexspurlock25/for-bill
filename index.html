@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Triangles&display=swap" rel="stylesheet">
+    <title>Merry Christmans</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background: linear-gradient(60deg, rgb(4, 61, 37) 20%, rgb(131, 1, 1) 80%);
+        }
+        #main {
+            font-size: 7rem;
+            font-family: "Rubik Doodle Triangles", sans-serif;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .char {
+            display: inline-block;
+            transition: all .4s ease-out;
+        }
+        .char:hover {
+            color: red;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+    <script>
+        const main = document.getElementById("main")
+        const wishToYou = "Merry Christmas!"
+
+        wishToYou.split("").forEach(character => {
+            if (character !== " ") {
+                main.innerHTML += `<span class='char'>${character}</span>`
+            } else {
+                main.innerHTML += "&nbsp;"
+            }
+        })
+    </script>
+</body>
+</html>
